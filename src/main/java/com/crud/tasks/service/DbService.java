@@ -18,8 +18,12 @@ public class DbService {
         return repository.findAll();
     }
 
-    public Optional<Task> getTask(long id) {
+    public Optional<Task> getTask(final long id) {
         return repository.findById();
+    }
+
+    public Task saveTask(final Task task) {
+        return repository.save(task);
     }
 
 }
