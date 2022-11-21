@@ -3,8 +3,8 @@ package com.crud.tasks.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
+import org.springframework.data.annotation.Id;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,7 +18,7 @@ public class Task {
     @javax.persistence.Id
     @Id
     @GeneratedValue
-    private Long id;
+    private Long taskId;
 
     @Column(name = "name")
     private String title;
@@ -26,8 +26,8 @@ public class Task {
     @Column(name = "description")
     private String content;
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long taskId) {
+        this.taskId = taskId;
     }
 
 }
