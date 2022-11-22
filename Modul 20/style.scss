@@ -1,0 +1,525 @@
+/* Variables */
+
+$font-header: 'Inconsolata', serif;
+$font-text: 'Signika', sans-serif;
+
+$color-blue: #0097e6;
+$color-green: #33d9b2;
+$color-red: #ff5252;
+
+$font-light: #ffffff;
+$font-dark: #2c2c54;
+
+$transition: all 1s;
+
+/* Global */
+
+*, *::before, *::after {
+        box-sizing: border-box;
+}
+
+body {    
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: $font-header;
+    color: $font-light;
+    
+}
+ 
+
+.container {
+    max-width: 1140px;
+    padding: 0 20px;
+    text-align: center;
+    position: center;
+    margin: 0 auto; /* cetnering whole content */
+}
+
+section {
+    padding: 96px 0;
+}
+
+.btn {
+    display: inline-block;
+    min-width: 160px;
+    margin: 24px auto 0 auto;
+    padding: 16px;
+    border-radius: 5px;
+    font-family: $font-header;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-width: 2px;
+    border-style: solid;
+    background-position: 100% 0;
+    background-size: 300%;
+}
+
+.services h1, .work h1 {
+    color: black;
+    font-size: 32px;
+    text-align: left;
+    
+}
+
+
+/*Navigation*/
+
+nav {
+    background: $color-blue;
+    padding: 36px 0 0 36px;
+    margin: 0;
+    display: block;
+
+}
+
+.nav-container {
+    max-width: 1140px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.navigation ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: left; 
+
+}
+
+.navigation li {
+    display: inline-block;
+    position: relative;
+    margin-right: 36px;
+}
+
+
+.navigation a {
+    text-decoration: none;
+    color: $font-light;
+}
+.navigation a:hover {  
+    color: $color-green;
+}
+
+
+.navigation ul ul {
+    display: block;
+    margin-bottom: 12px;
+    position: absolute;
+    background: $font-light;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 12px;
+}
+
+.navigation ul ul li {
+    display: none;  
+}
+
+.navigation li:hover li {
+    display: block;
+    text-align: center;
+    margin-right: 0;
+    color: $color-blue;
+}
+
+.navigation ul ul li a {
+    padding: 0 24px;
+    color: $color-green;
+}
+    
+.navigation li li a:hover {
+    color: $color-blue;
+}
+
+/* Splash */
+
+
+header {
+    display: flex;
+    background-color: $color-blue;
+    color: $font-light;
+    font-family: $font-header;
+    min-height: 500px;
+}
+
+.splash-inner {
+    margin: auto;
+    max-width: 70%;
+}
+    
+.splash-title {
+    margin: 0;
+    word-spacing: -24px;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.splash-subtitle {
+    margin: 24px 0;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: $font-text;
+}
+
+.splash-title span {
+    font-style: bold;
+    text-shadow: 1px 1px ;
+}
+
+.btn-one {
+    border-color: $font-light;
+    color: $font-light;
+    background-image: linear-gradient(90deg, #ffffff 50%, transparent 50%);
+}
+
+.btn:hover {
+    background-position: 0 100%;
+    color: $color-blue;
+    transition: $transition;
+}
+
+// /* Services */
+
+.services {
+    color: $font-dark;
+}
+
+.our-service {
+     flex: 0 0 33.333%;
+     display: block;
+     text-align: left;
+}
+
+.services-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+.services h2 {
+    font-size: 144px;
+    line-height: 1;
+    position: absolute;
+    opacity: 0.3;
+    color: $color-green;
+    bottom: 100px;
+    font-weight: 700;
+}
+
+.services h3 {
+    font-size: 24px;
+    margin: 0 0 12px 0;
+}
+
+.btn-two {
+    border-color: $color-green;
+    color: $color-green;
+    background-image: linear-gradient(90deg, $color-green 50%, transparent 50%);
+}
+
+.btn-three {
+    border-color: $color-red;
+    color: $color-red;
+    background-image: linear-gradient(90deg, $color-red 50%, transparent 50%);
+}
+    
+.btn-four {
+    border-color: $color-blue;
+    color: $color-blue;
+    background-image: linear-gradient(90deg, $color-blue 50%, transparent 50%);
+}
+
+.btn-two:hover, .btn-three:hover, .btn-four:hover {
+    color: white;
+}
+
+/* Work */
+
+.work {
+    padding: 30px;
+    color: $font-dark;
+    text-align: left;
+    background: white;
+}
+
+[class^="work-"] {
+    position: relative;
+}
+
+.work-image {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    position: relative;
+    filter: grayscale(20%);
+    opacity: 0.5;
+}
+
+.work-image:after {
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    left: 20px;
+    top: 20px;
+    content: "";
+    z-index: 2;
+    position: absolute;
+    background-color: #32a88b;
+    
+}
+
+.work-image:hover::after { 
+    z-index: 3;
+    transition: 1s;
+    transform: translate(-20px,-20px);
+}
+
+// .hover-immune img {
+//     pointer-events: none;
+//     position: static;
+// }
+
+.work-wrapper {
+    display: flex;
+    flex-wrap: wrap; 
+    flex: 0 0 25%;
+    min-width: 250px;
+    max-height: 300px;
+    justify-content: space-between;
+    margin-bottom: 96px;
+    width: 50%;
+    float: left;
+    position: relative;
+}
+    
+.work-description {
+    padding: 16px 0 16px 55%;
+    text-align: left;
+    overflow: hidden;
+    margin: 0;
+}
+
+.work-description p:last-of-type {
+    font-weight: bold;
+}
+
+.btn-five {
+    border: none;
+    margin: 16px 0;
+    padding: 0;
+    text-align: left;
+    color: $color-blue;
+}
+.btn-five:hover {
+    color: $color-green;   
+}
+ 
+.work:after {
+    position: absolute;
+    content: '';
+    bottom: -20px;
+    left: 50%;
+    width: 250px;
+
+    background-color: white;
+    margin-bottom: 96px;
+}
+
+/* Contact */
+
+.contact {
+    display: flex;
+    padding: 36px;
+    margin: 36px 0;
+    background-color: $color-blue;
+    color: $font-light;
+    font-family: $font-header;
+    min-height: 500px;
+    text-align: left;
+    width: 100%;
+}
+
+.contact-title  {
+    text-align: left;
+    font-family: $font-header;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap; 
+
+}
+
+form {
+    flex: 2 0 0;
+    padding-right: 96px;
+    height: 100%;
+    margin-top: 12px;
+    
+}
+.contact-data {
+    flex: 1 0 0;
+    font-size: 15px;
+    text-align: left;
+    margin-top: -24px;
+    font-family: $font-header;
+}
+
+.contact-data p {
+    font-size: 10px;
+    font-family: $font-text;
+}
+
+button[type="submit"] {
+	display: inline-block;
+	width: 100px;
+	height: 50px;
+	cursor: pointer;
+	font-size: 20px;
+	background-color: $color-blue;
+	color: $font-light;
+	border: 2px solid white;
+	outline: white;
+	float: left;
+	margin-left: 10px;
+}
+
+input, textarea {
+    padding: 5px;
+    margin: 10px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: $color-blue;
+    color: $font-light;
+    border-bottom: 1px white;
+    resize: none;
+}
+
+form input, form textarea {
+    border: none;
+    border-width: 2px;
+    border-bottom: 5px solid white; 
+    color: white;
+    display: inline-block;
+    outline: white;
+}
+
+::placeholder {
+    color: white;
+}
+
+ /* Footer */
+ 
+ footer {
+     background: white;   
+     margin: 48px 0;
+     font-size: 30px;
+ }
+ 
+ footer li {
+    display: inline-block;
+    font-size: 30px;;
+    background: red;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+ }
+ 
+ footer li a {
+    color: $font-light;   
+ }
+
+footer li:hover {
+    transform: scale(1.2);
+    transition: 1s;
+    z-index: 100;
+    cursor: pointer;
+}
+
+ footer span {
+     display: none;
+}
+
+/* Media */
+
+@media (max-width: 767px) { 
+
+.splash-title h1, .splash-subtitle h2 {
+    width: 100%;
+    margin: 10px;
+}
+
+.spalash-title h1 {
+    font-size: 46px;   
+}
+
+.splash-subtitle h2 {
+    font-size: 26px;
+}
+.work-wrapper, .services-wrapper, .contact-wrapper, .nav-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.work-image {
+    max-height: 150px;
+    display: block;
+}
+
+.work-image img {
+    width: 100%;
+    max-height: 150px;
+    margin: auto;
+    text-align: center;
+    display: block;
+}
+
+.work-image img:after {
+    max-height: 150px;
+    clear: both;
+}
+
+.work-description {
+    display: block;
+    float: left;
+}
+
+.contact-data {
+    margin-top: 24px;
+}
+.our-service h2 {
+    position: relative;
+    display: block;
+    font-size: 96px;
+    opacity: 0.3;
+    color: $color-green;
+    bottom: -80px;
+    line-height: 1;
+    margin: 0;
+
+}
+// .services h2 {
+//     font-size: 144px;
+//     line-height: 1;
+//     position: absolute;
+//     opacity: 0.3;
+//     color: $color-green;
+//     bottom: 100px;
+//     font-weight: 700;
+
+}
