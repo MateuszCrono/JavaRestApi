@@ -14,6 +14,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/v1/tasks")
 @NoArgsConstructor
 //@RequiredArgsConstructor
