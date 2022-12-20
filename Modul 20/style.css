@@ -1,16 +1,3 @@
-/* Variables */
-
-$font-header: 'Inconsolata', serif;
-$font-text: 'Signika', sans-serif;
-
-$color-blue: #0097e6;
-$color-green: #33d9b2;
-$color-red: #ff5252;
-
-$font-light: #ffffff;
-$font-dark: #2c2c54;
-
-$transition: all 1s;
 
 /* Global */
 
@@ -22,7 +9,6 @@ body {
     margin: 0;
     font-size: 50px;
     line-height: 1.5;
-    font-family: $font-header;
     color: red;
 }
  
@@ -97,10 +83,9 @@ nav {
 
 .navigation a {
     text-decoration: none;
-    color: $font-light;
-}
+    color: yellow;
 .navigation a:hover {  
-    color: $color-green;
+    color: blue;
 }
 
 
@@ -217,21 +202,21 @@ header {
 }
 
 .btn-two {
-    border-color: $color-green;
-    color: $color-green;
-    background-image: linear-gradient(90deg, $color-green 50%, transparent 50%);
+    border-color: green;
+    color: green;
+    background-image: linear-gradient(90deg, green 50%, transparent 50%);
 }
 
 .btn-three {
-    border-color: $color-red;
-    color: $color-red;
-    background-image: linear-gradient(90deg, $color-red 50%, transparent 50%);
+    border-color: red;
+    color: red;
+    background-image: linear-gradient(90deg, red 50%, transparent 50%);
 }
     
 .btn-four {
-    border-color: $color-blue;
-    color: $color-blue;
-    background-image: linear-gradient(90deg, $color-blue 50%, transparent 50%);
+    border-color: blue;
+    color: blue;
+    background-image: linear-gradient(90deg, blue 50%, transparent 50%);
 }
 
 .btn-two:hover, .btn-three:hover, .btn-four:hover {
@@ -374,12 +359,10 @@ form {
     font-size: 15px;
     text-align: left;
     margin-top: -24px;
-    font-family: $font-header;
 }
 
 .contact-data p {
     font-size: 10px;
-    font-family: $font-text;
 }
 
 button[type="submit"] {
@@ -388,8 +371,7 @@ button[type="submit"] {
 	height: 50px;
 	cursor: pointer;
 	font-size: 20px;
-	background-color: $color-blue;
-	color: $font-light;
+	background-color: blue;
 	border: 2px solid white;
 	outline: white;
 	float: left;
@@ -402,8 +384,7 @@ input, textarea {
     display: inline-block;
     width: 100%;
     height: 100%;
-    background-color: $color-blue;
-    color: $font-light;
+    background-color: blue;
     border-bottom: 1px white;
     resize: none;
 }
@@ -513,7 +494,4 @@ footer li:hover {
 
 }
 
-    .header h1, .services h2 {
-        color: red;
-    }
 }
