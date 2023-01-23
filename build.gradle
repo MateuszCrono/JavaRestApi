@@ -24,6 +24,8 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok:1.18.24'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.mockito:mockito-core:5.0.0'
+
 
 }
 
