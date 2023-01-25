@@ -34,17 +34,7 @@ public class SimpleEmailService {
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getMessage());
         Optional.ofNullable(mail.getToCc())
-                .ifPresent(cc -> mailMessage.setCc());
+                .ifPresent(mailMessage::setCc);
         return mailMessage;
-    }
-
-
-    private Mail createMailMessageByBuilder(final Mail mail) {
-        return  new Mail.MailBuilder()
-                .mailTo(mail.getMailTo())
-                .message(mail.getMessage())
-                .subject(mail.getSubject())
-                .toCc(mail.getToCc())
-                .build();
     }
 }
