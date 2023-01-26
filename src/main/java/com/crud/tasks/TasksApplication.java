@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @EnableWebMvc
 @SpringBootApplication
-public class    TasksApplication {
+public class TasksApplication {
 
     public static void main(String[] args) {
 
