@@ -4,7 +4,7 @@ import com.crud.tasks.domain.Task;
 import com.crud.tasks.domain.TaskDto;
 import com.crud.tasks.mapper.TaskMapper;
 import com.crud.tasks.service.DbService;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -12,19 +12,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @RestController
-@CrossOrigin("*")
 @RequestMapping("/v1/tasks")
-@NoArgsConstructor
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
+@CrossOrigin("*")
 public class TaskController {
 
     @Autowired
     private DbService service;
-@Autowired
+    @Autowired
     private TaskMapper taskMapper;
-
 
     @GetMapping
     public ResponseEntity<List<TaskDto>> getTasks() {
@@ -33,16 +30,16 @@ public class TaskController {
     }
 
     @GetMapping(value = "{taskId}")
-    public ResponseEntity<TaskDto> getTask(
-            @PathVariable Long taskId) throws TaskNotFoundException {
-        return ResponseEntity.ok(taskMapper.mapToTaskDto(service.getTask(taskId)));
+    public ResponseEntity<TaskDto> getTask(@PathVariable Long taskId) throws TaskNotFoundException {
+        return ResponseEntity.ok(taskMapper.mapToTaskDto(service.getTaskById(taskId)));
     }
 
     @DeleteMapping(value = "{taskId}")
-    public ResponseEntity<Void> deleteTask(@PathVariable Long taskId) {
-        service.deleteById(taskId);
+    public ResponseEntity<Void> deleteTask(@PathVariable Long taskId) throws TaskNotFoundException {
+        service.deleteTask(taskId);
         return ResponseEntity.ok().build();
     }
+
     @PutMapping
     public ResponseEntity<TaskDto> updateTask(@RequestBody TaskDto taskDto) {
         Task task = taskMapper.mapToTask(taskDto);
@@ -56,6 +53,4 @@ public class TaskController {
         service.saveTask(task);
         return ResponseEntity.ok().build();
     }
-
-
 }
