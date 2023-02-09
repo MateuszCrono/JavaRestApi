@@ -18,7 +18,7 @@ class AdminConfigTest {
         // When
         String AdminEmail = adminConfig.getAdminMail();
         // Then
-        assertEquals("matcrono@sgmail.com", AdminEmail);
+        assertEquals("matcrono@gmail.com", AdminEmail);
     }
 
 
