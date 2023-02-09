@@ -18,12 +18,12 @@ public class TrelloController {
 
     private final TrelloFacade trelloFacade;
 
-    @GetMapping("boards")
+    @GetMapping("/boards")
     public ResponseEntity<List<TrelloBoardDto>> getTrelloBoards() {
         return ResponseEntity.ok(trelloFacade.fetchTrelloBoards());
     }
 
-    @PostMapping("cards")
+    @PostMapping("/cards")
     public ResponseEntity<CreatedTrelloCardDto> createTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
         return ResponseEntity.ok(trelloFacade.createCard(trelloCardDto));
     }
