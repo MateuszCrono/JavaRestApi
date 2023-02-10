@@ -24,15 +24,15 @@ public class EmailScheduler {
                 new Mail(
                         adminConfig.getAdminMail(),
                         SUBJECT,
-                        MailCountChecker(size),
+                        mailCountChecker(size),
                         null
                 )
         );
     }
 
-    public String MailCountChecker (long size) {
+    public String mailCountChecker (long size) {
         String message = "Currently in database you got: " + size + " task";
-        if (size == 1) {
+        if (size != 1) {
                 message += "s";
         }
         return message;
