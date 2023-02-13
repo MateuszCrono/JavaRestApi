@@ -21,7 +21,6 @@ public class SimpleEmailService {
         log.info("Starting email preparation...");
         try {
             SimpleMailMessage mailMessage = createMailMessage(mail);
-            javaMailSender.send(mailMessage);
             log.info("Email has been sent.");
         } catch (MailException e) {
             log.error("Failed to process email sending: " + e.getMessage(), e);
