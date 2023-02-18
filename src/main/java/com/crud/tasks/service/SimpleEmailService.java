@@ -15,7 +15,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class SimpleEmailService {
 
-    private final JavaMailSender javaMailSender;
 
     public void send(final Mail mail) {
         log.info("Starting email preparation...");
