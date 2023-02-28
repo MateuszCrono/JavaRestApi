@@ -30,6 +30,18 @@ public class EmailScheduler {
         );
     }
 
+    @Scheduled(fixedDelay = 100000000)
+    public void sendInformationEmail2() {
+        long size = taskRepository.count();
+        simpleEmailService.sendCount(
+                Mail.builder()
+                        .mailTo(adminConfig.getAdminMail())
+                        .subject(SUBJECT)
+                        .message("Just for your knowledge")
+                        .build()
+        );
+    }
+
     public String mailCountChecker (long size) {
         String message = "Currently in database you got: " + size + " task";
         if (size != 1) {
