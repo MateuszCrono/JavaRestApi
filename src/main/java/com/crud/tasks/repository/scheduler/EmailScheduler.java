@@ -32,7 +32,6 @@ public class EmailScheduler {
 
     @Scheduled(fixedDelay = 100000000)
     public void sendInformationEmail2() {
-        long size = taskRepository.count();
         simpleEmailService.sendCount(
                 Mail.builder()
                         .mailTo(adminConfig.getAdminMail())
