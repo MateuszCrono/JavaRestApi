@@ -3,20 +3,16 @@ package com.crud.tasks.mapper;
 import com.crud.tasks.domain.Task;
 import com.crud.tasks.domain.TaskDto;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@ExtendWith(MockitoExtension.class)
 public class TaskMapperTestSuite {
 
-@Mock
-    private TaskMapper taskMapper;
+
+    private TaskMapper taskMapper = new TaskMapper();
 
 
     @Test
