@@ -31,8 +31,8 @@ class DbServiceTest {
         void saveTask() throws TaskNotFoundException {
             // Given
             Task task1 = new Task(1L, "Task Jedynka", "Pierwszy Task");
-            // When
             when(dbService.saveTask(any(Task.class))).thenReturn(task1);
+            // When
             Task savedTask = dbService.saveTask(task1);
             //Then
             assertEquals("Pierwszy Task", savedTask.getContent());
@@ -69,13 +69,12 @@ class DbServiceTest {
         List<Task> tasks = new ArrayList<>();
         tasks.add(task1);
         tasks.add(task2);
-
         // When
         when(dbService.getAllTasks()).thenReturn(tasks);
         List<Task> tasksResult = dbService.getAllTasks();
         // Then
-        assertEquals("Wrong Task", tasksResult.get(0).getTitle());
-        assertEquals("Searched Task", tasksResult.get(1).getTitle());
+        assertEquals(1L, tasksResult.get(0).getId());
+        assertEquals(2L, tasksResult.get(1).getId());
         //CleanUp
         dbService.deleteTask(task1.getId());
         dbService.deleteTask(task2.getId());
