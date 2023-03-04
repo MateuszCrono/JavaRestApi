@@ -51,8 +51,8 @@ class DbServiceTest {
             tasks.add(task1);
             tasks.add(task2);
             tasks.add(task3);
-            // When
             when(dbService.getAllTasks()).thenReturn(tasks);
+            // When
             List<Task> tasksResult = dbService.getAllTasks();
             // Then
             assertEquals(3, tasksResult.size());
@@ -69,6 +69,7 @@ class DbServiceTest {
         List<Task> tasks = new ArrayList<>();
         tasks.add(task1);
         tasks.add(task2);
+        when(dbService.getAllTasks()).thenReturn(tasks);
         // When
         when(dbService.getAllTasks()).thenReturn(tasks);
         List<Task> tasksResult = dbService.getAllTasks();
